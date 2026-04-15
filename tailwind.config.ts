@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         heading: ['Archivo Black', 'sans-serif'],
         body: ['Archivo', 'sans-serif'],
+        card: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
