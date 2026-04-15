@@ -1,16 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import MethodSection from "@/components/MethodSection";
+import CurriculumSection from "@/components/CurriculumSection";
+import InstructorSection from "@/components/InstructorSection";
+import CTASection from "@/components/CTASection";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <HeroSection />
+      <MethodSection />
+      <CurriculumSection />
+      <InstructorSection />
+      <CTASection />
+      <footer className="border-t border-border px-6 py-8 text-center">
+        <p className="text-muted-foreground font-body text-sm">
+          © {new Date().getFullYear()} Programa de Oratória e Retórica. Todos os direitos reservados.
+        </p>
+      </footer>
+      <WhatsAppButton />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
