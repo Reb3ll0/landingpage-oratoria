@@ -32,6 +32,7 @@ export default {
           DEFAULT: "hsl(var(--surface-dark))",
           foreground: "hsl(var(--surface-dark-foreground))",
         },
+        "card-border": "hsl(var(--card-border))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
