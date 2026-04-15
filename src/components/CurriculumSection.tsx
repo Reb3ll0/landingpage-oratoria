@@ -1,19 +1,17 @@
 import { motion } from "framer-motion";
 
 const modules = [
-  { num: "01", title: "Fundamentos da Retórica", desc: "A ciência por trás do orador." },
-  { num: "02", title: "Discurso Improvisado", desc: "Teses, evidências e estruturação rápida." },
-  { num: "03", title: "Entrega e Performance", desc: "Respiração diafragmática, ritmo e medo de falar em público." },
-  { num: "04", title: "Discursos Informativos", desc: "Planejamento, credibilidade e expertise." },
-  { num: "05", title: "Construção de Significado", desc: "Transformando dados e estatísticas em narrativas." },
-  { num: "06", title: "Voz e Presença Corporal", desc: "Projeção vocal, saúde vocal e gestos eficazes." },
-  { num: "07", title: "Oratória Persuasiva", desc: "Status Quo, ônus da prova, cura e contra-argumentação." },
-  { num: "08", title: "Estilo e Refinamento", desc: "Figuras de linguagem (Anáfora, Antítese) e coerência emocional." },
+  { num: "01", title: "A Lógica do Impacto", desc: "Fundamentos de Retórica e Credibilidade." },
+  { num: "02", title: "Raciocínio Sob Pressão", desc: "Estruturação de pensamentos e improviso." },
+  { num: "03", title: "Presença Executiva", desc: "Linguagem não-verbal, voz e domínio de palco." },
+  { num: "04", title: "A Engenharia do Discurso", desc: "Como transformar dados técnicos em significado." },
+  { num: "05", title: "Persuasão de Alto Nível", desc: "Como vencer objeções e mover pessoas." },
+  { num: "06", title: "Refinamento de Estilo", desc: "O polimento final dos grandes oradores." },
 ];
 
 const CurriculumSection = () => {
   return (
-    <section className="px-6 py-24 border-t border-border">
+    <section className="px-6 py-24">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,14 +21,14 @@ const CurriculumSection = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-3xl md:text-4xl tracking-tight text-foreground mb-4">
-            Grade Curricular
+            O Programa
           </h2>
-          <p className="text-muted-foreground font-body text-lg">
-            8 módulos desenhados para construir domínio progressivo.
+          <p className="text-muted-foreground font-card text-lg">
+            6 módulos desenhados para construir autoridade progressiva.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {modules.map((mod, i) => (
             <motion.div
               key={mod.num}
@@ -38,13 +36,13 @@ const CurriculumSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card border border-card-border rounded-xl p-7 hover:shadow-md transition-shadow"
             >
               <span className="inline-block mb-3 px-2.5 py-0.5 rounded text-xs font-body font-bold tracking-wider bg-cobalt text-cobalt-foreground">
                 Módulo {mod.num}
               </span>
               <h3 className="text-lg font-heading text-foreground mb-2">{mod.title}</h3>
-              <p className="text-muted-foreground font-body text-sm leading-relaxed">{mod.desc}</p>
+              <p className="text-muted-foreground font-card text-sm leading-relaxed">{mod.desc}</p>
             </motion.div>
           ))}
         </div>
