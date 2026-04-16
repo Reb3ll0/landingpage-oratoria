@@ -8,16 +8,16 @@ const quotes = [
 
 const StorytellingSection = () => {
   return (
-    <section className="px-6 py-20">
-      <div className="max-w-2xl mx-auto space-y-8">
+    <section className="px-6 py-10">
+      <div className="max-w-2xl mx-auto space-y-5">
         {quotes.map((quote, i) => (
           <motion.p
             key={i}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="text-foreground/80 font-card text-base md:text-lg leading-relaxed"
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            className="text-foreground/80 font-card text-sm md:text-base leading-relaxed"
           >
             {quote}
           </motion.p>

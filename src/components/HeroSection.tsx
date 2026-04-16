@@ -1,21 +1,62 @@
 import { motion } from "framer-motion";
+import { MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-[70vh] flex items-center justify-center px-6 py-20">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="max-w-3xl text-center"
-      >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-foreground mb-6">
+    <section className="px-6 pt-16 pb-10">
+      <div className="max-w-3xl mx-auto text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-foreground mb-5"
+        >
           Sua palavra vale milhões.
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground font-body font-normal max-w-2xl mx-auto leading-relaxed">
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="text-base md:text-lg text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed mb-10"
+        >
           No alto escalão, a diferença entre o sim e o não é a sua capacidade de comunicar. Transforme sua oratória no seu maior ativo de influência e autoridade profissional.
-        </p>
-      </motion.div>
+        </motion.p>
+
+        {/* Video */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="aspect-video rounded-lg overflow-hidden border border-border shadow-lg bg-muted flex items-center justify-center mb-8"
+        >
+          <div className="text-muted-foreground font-body text-sm text-center px-8">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cobalt/10 flex items-center justify-center">
+              <svg className="w-7 h-7 text-cobalt" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            Insira aqui o vídeo de apresentação
+          </div>
+        </motion.div>
+
+        {/* CTA Primário */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+        >
+          <a
+            href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre o programa de Oratória."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-cobalt text-cobalt-foreground font-body font-bold text-base uppercase tracking-wider shadow-md animate-pulse-cobalt hover:scale-105 transition-transform"
+          >
+            <MessageCircle className="w-5 h-5" />
+            Comece Já
+          </a>
+        </motion.div>
+      </div>
     </section>
   );
 };
