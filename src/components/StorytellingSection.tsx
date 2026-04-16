@@ -1,16 +1,15 @@
 import { motion } from "framer-motion";
 
-const quotes = [
-  "Ideias brilhantes morrem no silêncio ou na má explicação. O mercado não remunera apenas quem sabe, mas quem sabe convencer.",
-  "Domine a estrutura de pensamento das mentes mais influentes e pare de deixar oportunidades na mesa por falta de clareza ou segurança.",
-  "Este não é um curso de 'falar bem'. É um treinamento para quem entende que a comunicação é a ferramenta de alavancagem mais poderosa da carreira.",
+const paragraphs = [
+  "O mercado não remunera apenas o conhecimento, mas a capacidade de defendê-lo. No ambiente corporativo, quem não é ouvido, não é promovido.",
+  "Aprenda a dominar a retórica clássica aplicada à velocidade das decisões modernas.",
 ];
 
 const StorytellingSection = () => {
   return (
-    <section className="px-6 py-10">
-      <div className="max-w-2xl mx-auto space-y-5">
-        {quotes.map((quote, i) => (
+    <section className="px-6 py-8">
+      <div className="max-w-2xl mx-auto text-center space-y-3">
+        {paragraphs.map((text, i) => (
           <motion.p
             key={i}
             initial={{ opacity: 0, y: 12 }}
@@ -19,7 +18,7 @@ const StorytellingSection = () => {
             transition={{ duration: 0.4, delay: i * 0.08 }}
             className="text-foreground/80 font-card text-sm md:text-base leading-relaxed"
           >
-            {quote}
+            {text}
           </motion.p>
         ))}
       </div>

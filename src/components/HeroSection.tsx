@@ -3,13 +3,13 @@ import { MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="px-6 pt-16 pb-10">
+    <section className="px-6 pt-14 pb-8">
       <div className="max-w-3xl mx-auto text-center">
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-foreground mb-5"
+          className="text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-foreground mb-4"
         >
           Sua palavra vale milhões.
         </motion.h1>
@@ -18,9 +18,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-base md:text-lg text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed mb-10"
+          className="text-base md:text-lg text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed mb-8"
         >
-          No alto escalão, a diferença entre o sim e o não é a sua capacidade de comunicar. Transforme sua oratória no seu maior ativo de influência e autoridade profissional.
+          No alto escalão, sua comunicação é seu maior ativo. Transforme sua oratória em influência e autoridade executiva.
         </motion.p>
 
         {/* Video */}
@@ -28,7 +28,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="aspect-video rounded-lg overflow-hidden border border-border shadow-lg bg-muted flex items-center justify-center mb-8"
+          className="aspect-video rounded-lg overflow-hidden border border-border shadow-lg bg-muted flex items-center justify-center mb-6"
         >
           <div className="text-muted-foreground font-body text-sm text-center px-8">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cobalt/10 flex items-center justify-center">
