@@ -62,9 +62,23 @@
   * {
     @apply border-border;
   }
+  html, body, #root {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: hsl(var(--background));
+    /* Smooth scrolling, especially on iOS inside iframes */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    overflow-x: hidden;
   }
   h1, h2, h3 {
     font-family: var(--font-heading);

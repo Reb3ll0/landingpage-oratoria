@@ -28,7 +28,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="aspect-video rounded-lg overflow-hidden border border-border shadow-lg bg-muted flex items-center justify-center mb-6"
+          className="aspect-video rounded-lg overflow-hidden bg-muted flex items-center justify-center mb-6"
         >
           <div className="text-muted-foreground font-body text-sm text-center px-8">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cobalt/10 flex items-center justify-center">

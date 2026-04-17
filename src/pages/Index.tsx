@@ -6,16 +6,11 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen w-full bg-background">
       <HeroSection />
       <StorytellingSection />
       <CurriculumSection />
       <CTAFinalSection />
-      <footer className="border-t border-border px-6 py-5 text-center">
-        <p className="text-muted-foreground font-card text-xs">
-          © 2026 Ricardo Peruffo. Todos os direitos reservados.
-        </p>
-      </footer>
       <WhatsAppButton />
     </div>
   );
