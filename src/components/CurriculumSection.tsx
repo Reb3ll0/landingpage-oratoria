@@ -143,7 +143,7 @@ const CurriculumSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 lg:[&>*:nth-last-child(2)]:lg:col-start-2 lg:[&>*:nth-last-child(2)]:col-start-2">
           {modules.map((mod, i) => (
             <motion.div
               key={mod.num}
