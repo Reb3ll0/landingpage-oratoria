@@ -1,4 +1,10 @@
 import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const modules = [
   {
@@ -145,25 +151,35 @@ const CurriculumSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: i * 0.04 }}
-              className="bg-card border border-card-border rounded-lg p-5 hover:shadow-sm transition-shadow"
+              className="bg-card border border-card-border rounded-lg px-5 py-4 hover:shadow-sm transition-shadow"
             >
-              <span className="inline-block mb-1.5 px-2 py-0.5 rounded text-xs font-body font-bold tracking-wider bg-cobalt text-cobalt-foreground">
-                Módulo {mod.num}
-              </span>
-              <h3 className="text-sm font-body font-bold text-foreground mb-2">
-                {mod.title}
-              </h3>
-              <ul className="space-y-1">
-                {mod.topics.map((topic) => (
-                  <li
-                    key={topic}
-                    className="text-muted-foreground font-card text-xs leading-relaxed flex gap-1.5"
-                  >
-                    <span className="text-cobalt mt-0.5">·</span>
-                    <span>{topic}</span>
-                  </li>
-                ))}
-              </ul>
+              <Accordion type="single" collapsible>
+                <AccordionItem value={mod.num} className="border-0">
+                  <AccordionTrigger className="py-0 hover:no-underline group">
+                    <div className="flex flex-col items-start text-left gap-1.5">
+                      <span className="inline-block px-2 py-0.5 rounded text-xs font-body font-bold tracking-wider bg-cobalt text-cobalt-foreground">
+                        Módulo {mod.num}
+                      </span>
+                      <h3 className="text-sm font-body font-bold text-foreground group-hover:text-cobalt transition-colors">
+                        {mod.title}
+                      </h3>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-0 pt-3">
+                    <ul className="space-y-1">
+                      {mod.topics.map((topic) => (
+                        <li
+                          key={topic}
+                          className="text-muted-foreground font-card text-xs leading-relaxed flex gap-1.5"
+                        >
+                          <span className="text-cobalt mt-0.5">·</span>
+                          <span>{topic}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </motion.div>
           ))}
         </div>
