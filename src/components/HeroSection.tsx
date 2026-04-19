@@ -28,16 +28,16 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="aspect-video rounded-lg overflow-hidden bg-muted flex items-center justify-center mb-6"
+          className="aspect-video rounded-lg overflow-hidden bg-muted mb-6"
         >
-          <div className="text-muted-foreground font-body text-sm text-center px-8">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cobalt/10 flex items-center justify-center">
-              <svg className="w-7 h-7 text-cobalt" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-            Insira aqui o vídeo de apresentação
-          </div>
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/s_cVEI_kTjA?rel=0&modestbranding=1"
+            title="Vídeo de apresentação"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+          />
         </motion.div>
 
         {/* CTA Primário */}
