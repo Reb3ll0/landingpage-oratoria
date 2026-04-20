@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
-import { openExternal } from "@/lib/openExternal";
-
-const WHATSAPP_URL = "https://wa.me/555182576087?text=Olá!%20Quero%20saber%20mais";
 
 const HeroSection = () => {
   return (
@@ -50,13 +47,9 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.45 }}
         >
           <a
-            href={WHATSAPP_URL}
+            href="https://wa.me/555182576087?text=Olá!%20Quero%20saber%20mais"
             target="_blank"
-            rel="noopener noreferrer nofollow"
-            onClick={(e) => {
-              e.preventDefault();
-              openExternal(WHATSAPP_URL);
-            }}
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-cobalt text-cobalt-foreground font-body font-bold text-base uppercase tracking-wider shadow-md animate-pulse-cobalt hover:scale-105 transition-transform"
           >
             <MessageCircle className="w-5 h-5" />
