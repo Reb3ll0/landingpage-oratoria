@@ -47,7 +47,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.45 }}
         >
           <a
-            href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre o programa de Oratória."
+            href="https://wa.me/555182576087?text=Olá!%20Quero%20saber%20mais"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-cobalt text-cobalt-foreground font-body font-bold text-base uppercase tracking-wider shadow-md animate-pulse-cobalt hover:scale-105 transition-transform"
