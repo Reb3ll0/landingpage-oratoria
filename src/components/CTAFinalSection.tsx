@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { openExternal } from "@/lib/openExternal";
 
 const CTAFinalSection = () => {
   return (
@@ -20,7 +21,11 @@ const CTAFinalSection = () => {
         <a
           href="https://wa.me/555182576087?text=Olá!%20Quero%20saber%20mais"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer nofollow"
+          onClick={(e) => {
+            e.preventDefault();
+            openExternal("https://wa.me/555182576087?text=Olá!%20Quero%20saber%20mais");
+          }}
           className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-cobalt text-cobalt-foreground font-body font-bold text-base uppercase tracking-wider shadow-md animate-pulse-cobalt hover:scale-105 transition-transform"
         >
           <MessageCircle className="w-5 h-5" />
