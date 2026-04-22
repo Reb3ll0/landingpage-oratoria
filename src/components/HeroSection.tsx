@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { openExternal } from "@/lib/openExternal";
+import YouTubeFacade from "@/components/YouTubeFacade";
 
 const HeroSection = () => {
   return (
@@ -31,14 +32,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="aspect-video rounded-lg overflow-hidden bg-muted mb-6"
         >
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/s_cVEI_kTjA?rel=0&modestbranding=1"
-            title="Vídeo de apresentação"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            loading="lazy"
-          />
+          <YouTubeFacade videoId="s_cVEI_kTjA" title="Vídeo de apresentação" />
         </motion.div>
 
         {/* CTA Primário */}
@@ -58,7 +52,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-cobalt text-cobalt-foreground font-body font-bold text-base uppercase tracking-wider shadow-md animate-pulse-cobalt hover:scale-105 transition-transform"
           >
             <MessageCircle className="w-5 h-5" />
-            Comece Já
+            Quero saber mais sobre o Treinamento de Oratória.
           </a>
         </motion.div>
       </div>

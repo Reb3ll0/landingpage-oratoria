@@ -1,47 +1,52 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
-import StorytellingSection from "@/components/StorytellingSection";
-import CurriculumSection from "@/components/CurriculumSection";
-import CTAFinalSection from "@/components/CTAFinalSection";
+
+const StorytellingSection = lazy(() => import("@/components/StorytellingSection"));
+const CurriculumSection = lazy(() => import("@/components/CurriculumSection"));
+const CTAFinalSection = lazy(() => import("@/components/CTAFinalSection"));
 
 const Index = () => {
   useEffect(() => {
+    let raf = 0;
+    let lastHeight = 0;
+
     const sendHeight = () => {
       const height = document.documentElement.scrollHeight;
+      if (height === lastHeight) return;
+      lastHeight = height;
       try {
         window.parent.postMessage({ type: "resize", height }, "*");
-      } catch (e) {
+      } catch {
         // silently ignore cross-origin errors
       }
     };
 
-    // Initial send + a couple of delayed sends to catch fonts/images
+    const scheduleSend = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        sendHeight();
+      });
+    };
+
     sendHeight();
-    const t1 = setTimeout(sendHeight, 300);
-    const t2 = setTimeout(sendHeight, 1000);
-    const t3 = setTimeout(sendHeight, 2500);
+    const t1 = setTimeout(sendHeight, 500);
+    const t2 = setTimeout(sendHeight, 2000);
 
-    // Observe DOM size changes
-    const ro = new ResizeObserver(() => sendHeight());
+    const ro = new ResizeObserver(scheduleSend);
     ro.observe(document.documentElement);
-    if (document.body) ro.observe(document.body);
-
-    // Observe DOM mutations (content changes)
-    const mo = new MutationObserver(() => sendHeight());
-    mo.observe(document.body, { childList: true, subtree: true, attributes: true });
 
     window.addEventListener("load", sendHeight);
-    window.addEventListener("resize", sendHeight);
+    window.addEventListener("resize", scheduleSend);
     window.addEventListener("orientationchange", sendHeight);
 
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
-      clearTimeout(t3);
+      if (raf) cancelAnimationFrame(raf);
       ro.disconnect();
-      mo.disconnect();
       window.removeEventListener("load", sendHeight);
-      window.removeEventListener("resize", sendHeight);
+      window.removeEventListener("resize", scheduleSend);
       window.removeEventListener("orientationchange", sendHeight);
     };
   }, []);
@@ -49,9 +54,11 @@ const Index = () => {
   return (
     <div className="w-full bg-background">
       <HeroSection />
-      <StorytellingSection />
-      <CurriculumSection />
-      <CTAFinalSection />
+      <Suspense fallback={<div className="min-h-[200px]" />}>
+        <StorytellingSection />
+        <CurriculumSection />
+        <CTAFinalSection />
+      </Suspense>
     </div>
   );
 };
