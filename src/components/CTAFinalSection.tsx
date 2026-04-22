@@ -29,7 +29,7 @@ const CTAFinalSection = () => {
           className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-cobalt text-cobalt-foreground font-body font-bold text-base uppercase tracking-wider shadow-md animate-pulse-cobalt hover:scale-105 transition-transform"
         >
           <MessageCircle className="w-5 h-5" />
-          Quero saber mais sobre o Treinamento de Oratória.
+          Quero Saber Mais
         </a>
       </motion.div>
     </section>
