@@ -32,14 +32,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="aspect-video rounded-lg overflow-hidden bg-muted mb-6"
         >
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/s_cVEI_kTjA?rel=0&modestbranding=1"
-            title="Vídeo de apresentação"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            loading="lazy"
-          />
+          <YouTubeFacade videoId="s_cVEI_kTjA" title="Vídeo de apresentação" />
         </motion.div>
 
         {/* CTA Primário */}
