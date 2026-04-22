@@ -19,17 +19,17 @@ const CTAFinalSection = () => {
           Vagas limitadas para manter a qualidade do treinamento. Fale com nosso time agora.
         </p>
         <a
-          href="https://wa.me/555182576087?text=Olá!%20Quero%20saber%20mais"
+          href="https://wa.me/555182576087?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Treinamento%20de%20Orat%C3%B3ria."
           target="_blank"
           rel="noopener noreferrer nofollow"
           onClick={(e) => {
             e.preventDefault();
-            openExternal("https://wa.me/555182576087?text=Olá!%20Quero%20saber%20mais");
+            openExternal("https://wa.me/555182576087?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Treinamento%20de%20Orat%C3%B3ria.");
           }}
           className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-cobalt text-cobalt-foreground font-body font-bold text-base uppercase tracking-wider shadow-md animate-pulse-cobalt hover:scale-105 transition-transform"
         >
           <MessageCircle className="w-5 h-5" />
-          Quero saber mais sobre o Treinamento de Oratória.
+          Quero Saber Mais
         </a>
       </motion.div>
     </section>
