@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { openExternal } from "@/lib/openExternal";
+import YouTubeFacade from "@/components/YouTubeFacade";
 
 const HeroSection = () => {
   return (
